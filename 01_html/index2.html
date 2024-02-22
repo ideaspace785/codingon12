@@ -1,0 +1,105 @@
+<!--  ⭐ 개꿀팁  "!" 또는 html5 TAB누르면 HTML 기본 구조 자동완성  -->
+<!-- 주석 comment 단축키 (ctrl /) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러가지 태그 종료</title>
+</head>
+<body>
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3>
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+
+
+<!--p(paragraph) tag-->
+<!--Entity code? 특수문자 코드표를 쓰고 <p>같은 요형의 문자를 그대로 쓸 수 있다.
+    또한 &lt; 는 "Less than sign < "
+        &gt; 는 "Greather than sign > " 을 의미한다. 
+    ⭐ https://sensechef.com/957
+    https://aneok.tistory.com/entry/HTML-%EC%9E%90%EC%A3%BC-%EC%82%AC%EC%9A%A9-%ED%8A%B9%EC%88%98%EB%AC%B8%EC%9E%90-%EC%BD%94%EB%93%9C%ED%91%9C-Entity-code -->
+
+<p>하나의 문단을 표시하고 싶을 때 &lt;p&gt;해당 태그를 사용합니다.</p>
+    
+
+<!-- img -->
+<!-- src 속성: 이미지의 주소 -->
+<!-- alt 속성: 이미지를 볼 수 없을때 이미지를 대체하는 텍스트 -->
+<!--width pixel을 나타내는 , width만 조절했을때 원본 사이즈를 고려해서 사이즈 조절해준다. -->
+<!-- img tag 이 빈 요소니까 마지막에 "/" 를 self closing 해주면 좋다.-->
+<!-- title은 해당 이미지에 마우스 cursor을 갖다 대면 나온다 -->
+
+<img src="./img/비키.jpg"" alt="울강아지" width="100" title="귀여워♥!!!!!!" />
+
+<img src="./img/고기만두.jpg" alt="만두" width="100"/>
+<img src="./img/김치찌개.jpg" alt="김치찌개" width="100"/>
+<img src="./img/강아지" alt="alt 표시" title="원래는 강쥐 사진 지금은 없어!!">
+<img src="https://postfiles.pstatic.net/MjAyMTA3MDVfMTMx/MDAxNjI1NDU4NjI5NjQ3.Uzg-qNn7uhUpSSC2_uWGRCLxKB0dlM8L6Zv3PoD2SOwg.j21MpfHhI_FcB-Z8Ajlgj6S_qsan0JvXwm_rCzF1DGMg.JPEG.sj330035/IMG_4901.JPG?type=w966" alt="링크에서 따온 사진" width="100" />
+
+
+<!-- br tag -->
+<br/>
+
+<!-- a tag -->
+<!-- href 속성: content를 클릭했을때 연결할 주소 지정(페이지의 url을 넣어주면 된다. ) -->
+
+<!-- Absolute url 절대 주소: 다른 인터넷 상의 url로 넘어간다.-->
+<a href="https://www.naver.com/">NAVER</a>
+<br/>
+<!-- relative URL 상대주소: -->
+<a href="./index.html">index url</a>
+
+<!-- target 속성: 링크가 열린 위치 지정
+    - _self(default):현재 탭에서 열기
+    - _blank: 새탭에서 열기                   -->
+
+    <br/><a href="https://www.naver.com/" target="_self" > Naver(Self) 현재 페이지에서 열기</a><br/>
+    <a href="https://www.naver.com/" target="_blank" >Naver(Blank) 새탭 열기</a>
+
+<!-- ul ol tag-->
+<h3>오늘의 할 일</h3>
+<ul type="square">
+    <li>HTML 복습</li>
+    <li>블로그 작성</li>
+    <li>운동하기</li>
+</ul>
+
+<h3>아이스카페 레시피</h3>
+<ol>
+    <!---type 속성: 1(default), a, A, i, I ...-->
+    <!-- start 속성: 시작 번호 -->
+    <!-- reversed 속성 : 역순 정렬-->
+    <li><strong>우유</strong>  <em>180ml</em> 넣기</li>
+    <li><b>얼음</b>을 가득 넣기</li>
+    <li><i>에스프레소 샷</i>을 넣아주면</li>
+    <li><u>완성!</u> <del>맛있게 드세요!</del></li>
+</ol>
+<!--목록 태그의 중첩 -->
+<h3>내가 좋아하는 음식</h3>
+<ol>
+    <li>양식
+    <ul>
+        <li>피자</li>
+        <li>버거</li>
+    </ul>
+    <li>한식
+        <ul>
+            <li>삼겹살</li>
+            <li>찌개</li>
+        </ul>
+    </li>
+</ol>
+<!-- div, span 가장 자주 쓰는 태그들-->
+<div style="background-color: pink;">div tag 1</div>
+<div style="background-color: beige;">div tag 2</div>
+<!-- div tag은 block element -->
+
+<span style="background-color: palegreen;">span tag 1</span>
+<span style="background-color: bisque;">span tag 2</span>
+<!-- span tag은 line element -->
+</body>
+</html>
