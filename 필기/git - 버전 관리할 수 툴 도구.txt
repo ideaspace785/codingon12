@@ -1,0 +1,21 @@
+git - 버전 관리할 수 툴 도구
+github- google drive 비슷한 기능
+visual studio code-
+GUI(graphic user interface)
+CLI (command Line Interface) 
+$ - 프롬프트(Prompt) - 컴퓨터가 사용자에게 명령어를 입력받을 준비가 되었다고 알리는 것
+~ 물결 표시는 (home) 홈의 위치 
+
+*File, folder 생성시 주의할 것:ㅗㅑㄴ
+- 공백(space bar) 대신 (_), (-)
+- 숫자 괜찮음
+- 한글 대신 영어 대소문자를 사용할 것
+
+github 저장소=remote =origin =원격 저장소 
+add->commit->push->pull
+--git 명령어 입력 
+
+<참고>
+.md (mark down): 마크다운 (일반 텍스트 기반의 경량 마크업 언어)
+
+core ignorecase=false (대소문자를 구분하지 않겠다는 설정) 
