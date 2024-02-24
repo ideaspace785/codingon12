@@ -1,0 +1,17 @@
+1em=16px
+vw -viewport width
+vh- viewport height 
+
+css 속성 
+
+line-height
+font-size
+font-family( serif, sans-serif, monospace)
+
+
+display 속성값:
+: inline, block, inline-block, flex
+
+Calc() 함수 
+
+border

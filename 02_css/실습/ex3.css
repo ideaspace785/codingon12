@@ -1,0 +1,13 @@
+#div1, #div2{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 15px solid red;
+    background-color: orange;
+}
+#div1{
+    box-sizing: border-box;
+}
+#div2{
+    box-sizing: content-box;
+}
