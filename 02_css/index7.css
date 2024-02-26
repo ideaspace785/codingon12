@@ -1,0 +1,51 @@
+div{
+    width: 100px;
+    height: 100px;
+    font-size: 700;
+    text-align: center;
+    line-height: 100px;
+}
+
+/*  static은 기본값 default이기 때문에 명시하지 않아도 적용됨 */
+/*   -inline 요소이면 : 왼 -> 오른 쌓임 */
+/*   -block 요소이면: 위-> 아래 쌓임*/
+.p-static{
+    position: static;
+    background-color: pink;
+}
+
+/* realtive: 상대위치  */
+/* (주의) top/bottom/left/right 중 하나 이상의 속성과 같이 사용 */
+.p-relative{
+    position: relative;
+    left:200px;
+    background-color: aquamarine;
+}
+/* absolute tag: 절대 위치 */
+/* -누구를 기준?:: psoition 속성을 갖는 가장 가까운 조상 요소
+   -없으면 body기준으로  top/bottom/left/right 이동  */
+   .p-absolute{
+    position: absolute;
+    background-color: gold;
+    top: 50px;
+    left: 50px;
+   }
+
+   .p-fixed{
+    background-color: coral;
+    position: fixed;
+    top: 0;
+    right: 0;
+   }
+
+   .box{
+    width: 100px;
+    height: auto;
+    background-color: #eee;
+    position: relative;
+   }
+   .heart{
+    position:absolute;
+    top: 10px;
+    right: 10px;
+   }
