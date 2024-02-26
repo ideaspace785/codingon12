@@ -1,0 +1,13 @@
+body{
+    /* background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a); */
+background-image: url(https://cms-assets.tutsplus.com/cdn-cgi/image/width=630/uploads/users/107/posts/26488/final_image/41-space-scrolling-background850-2.jpg);
+    background-repeat: no-repeat;
+background-size: contain;
+
+/* background-attachment
+  -scroll(default): 이미지가 요소를 따라서 같이 스크롤 됨 
+  - fixed: 이미지가 뷰포트에 고정되어 스크롤되지 않음*/
+  background-attachment: scroll;
+  background-attachment: fixed;
+  background-attachment: local;
+}
