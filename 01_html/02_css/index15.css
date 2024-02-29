@@ -1,0 +1,48 @@
+/* ------------------------------------------------------- */
+/* div{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    position: relative;
+
+    animation-name: ball;
+    animation-duration: 3s;
+    animation-iteration-count: 6;
+    animation-timing-function: linear;
+}
+@keyframes ball{
+    0%,100%{
+        left:0px;
+        top:0px;
+      }
+      25%{
+        left:250px;
+        top:0px;
+      }
+      50%{
+        left:250px;
+        top:250px;
+      }
+      75%{
+        left:0px;
+        top:250px;
+      }
+} */
+/* ---------------------------------------------------- */
+div{
+    animation: paragraph 2s;
+    position: relative;
+    font-size: larger;
+    font-weight: 600;
+}
+@keyframes paragraph{
+    from{
+        margin-left: 100%;
+        width: 300px;
+    }
+    to{
+        margin-left: 0%;
+        width: 100%;
+    }
+}

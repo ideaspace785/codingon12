@@ -6,7 +6,7 @@ for(let i=0; i<10; i++){
     }
     console.log(i)
 }
-console.log('-------------------continue문');
+console.log('-------------------continue문');   
 for(let i=0; i<10; i++){
     if(i==5){
         continue;

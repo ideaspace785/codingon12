@@ -1,0 +1,14 @@
+.border{
+    width: auto;
+    height: 100px;
+    background-color: pink;
+    border-width: 4px;
+    border-color: black;
+    border-style: solid;
+
+    border-top-style: dashed;
+    border-bottom-color: blue;
+   
+    border-radius: 15% 60% 5% 30%;
+    border-left-width: 10px;
+}

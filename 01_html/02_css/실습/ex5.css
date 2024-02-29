@@ -1,0 +1,17 @@
+/* .border{
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+}
+.border:hover{
+    display: none;
+} */
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+  }
+  div:hover {
+    opacity: 0;
+  }

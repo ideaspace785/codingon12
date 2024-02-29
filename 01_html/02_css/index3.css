@@ -1,0 +1,49 @@
+/*  2/24/2024(토) */
+ .div1{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+/* hover 요소에 마우스를 올렸을때를 의미*/
+.div1:hover{
+    background-color: pink;
+   
+    height: 150px;
+}
+/* active 요소를 마우스로 클릭했을 때*/
+.div1:active{
+    background-color: brown;
+    width: 150px;
+}
+
+/* Focus 요소에 포코즈가 됐을때 */
+input:focus{
+    background-color: blueviolet;
+    color: #fff;
+    outline: yellowgreen;
+}
+
+.links > a:hover{
+    background-color: coral;
+}
+
+/* a tag 가 링크랑 연결 되는데 이미 방문한 링크의 색을 바꿔주는 역할 */
+.links > a:visited{
+    color: #ccc;
+}
+div{
+    width: 100px;
+    height: 100px;
+    background-color: #f5d682;
+  border: 1px solid red;
+}
+h1:hover{
+    color: red;
+}
+.link:active{
+    background-color: blue;
+}
+input:focus{
+    background-color: orange;
+
+}

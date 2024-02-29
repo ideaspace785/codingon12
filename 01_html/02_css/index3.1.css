@@ -1,0 +1,50 @@
+.zoo > * {
+    background-color: green;
+    color: white;
+}
+/* Element(E) :Last child *E가 마지막 요소라면 */
+.zoo > *:last-child{
+    background-color: black;
+}
+/* Element(E) :First child *E가 첫번째 요소라면 */
+.zoo > *:first-child{
+    background-color: red;
+}
+/* E: not(XYZ) XYZ가 아닌 요소 */
+.zoo > *:not(div){
+    background-color: pink;
+}
+
+.zoo > *:nth-child(2){
+    background-color: aqua;
+}
+
+/* 가상 요소 선택자 */
+/* .box::before{ 
+    content: '빨리!';
+    color: blue;
+}
+*/
+.box::after{
+    content: '택시';
+    color: red;
+}
+.box::after, .box::before{
+    font-weight: bold;
+}
+.box::hover::before{
+    content: '빨리!!';
+    color: red;
+}
+
+/* 속성 선택자 */
+[disabled]{
+    background-color: darkgray;
+}
+[placeholder="이름"]{
+    background-color: orange;
+}
+
+input:not([placeholder]){
+    background-color: skyblue;
+}

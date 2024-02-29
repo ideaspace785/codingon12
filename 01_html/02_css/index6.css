@@ -1,0 +1,17 @@
+.box {
+    background-color: skyblue;
+    width: 400px;
+    height: 50px;
+  
+    /* visible, hidden, scroll, auto */
+    /* overflow: auto; */
+  
+    overflow-y: scroll;
+  
+    /* opacity: 0 ~ 1 사이의 실수 값 */
+    /* opacity: 0.3; */
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
