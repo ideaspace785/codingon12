@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{border: 1px solid ; width: 100px; height: 100px;}
+        #green{ background-color: green;}
+        #red{background-color: red;}
+        .d-none{opacity: 0.5;}
+        .box1{background-color: yellow;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box mystyle section" id="green">1</div>
+        <div class="box" id="red">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+    <button onclick="addClass()">addClass</button>
+    <button onclick="removeClass()">removeClass</button>
+    <button onclick="containsClass()">containsClass</button>
+    <button onclick="toggleClass()">toggleClass</button>
+    <input type="text" name="username" id="username">
+
+<script>
+    let greenBox=document.getElementById('green')
+    //global var
+  //greenbox를 여러군데에서 사용하고자 전역변수로 선언
+   console.log(greenBox.classList)
+    function addClass(){
+        greenBox.classList.add('box1');
+        console.log(greenBox.classList);
+    }
+    function removeClass(){
+        greenBox.classList.remove('box');
+        console.log(greenBox.classList);
+    }
+    //box1 이라는 클래스가 존재하는지 있는지만 확인 출력값 truem false
+    function containsClass(){
+        console.log (greenBox.classList.contains('box1'));
+   
+    }
+    function toggleClass(){
+        greenBox.classList.toggle('box1');
+            }
+</script>
+</body>
+</html>
+
+//주어진 input 에 클래스를 추가해 주세요

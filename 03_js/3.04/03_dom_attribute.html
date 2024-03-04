@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .demo{ background-color: gold;}
+    .democlass{text-decoration: underline; background-color: orange;}
+    .section1{font-size: 1.5rem; color:blue;}
+</style>
+<body>
+    <!-- <div id="div1" style="background-color: red; text-align: center;">div</div>
+    <script>
+        let div1=document.getElementById('div1');
+        let mystyle=div1.getAttribute('style');
+        console.log(mystyle)
+    </script> -->
+    <h1 id="myH1" class="demo">The Element Object</h1>
+    <p id="section1"></p>
+    <div class="'demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatem!</div>
+    <button onclick="myF()">Add Class</button>\
+    <script>
+        // const elem=document.getElementById('myH1');
+        // let text=elem.getAttribute('class');
+        // //console.log(text);
+        // let x=document.getElementById('section1');
+        // x.innerText=text;
+    
+        //console.log(text);
+        let txt=document.getElementById('myH1').getAttribute('class');
+        document.getElementById('section1').innerText=txt;
+
+        // setAttribute(a,b)
+        function myF(){
+             document.getElementById('myH1').setAttribute('id', 'section1')
+        // }
+        function myF2(){
+            document.getElementById('section1').setAttribute('class', 'demo')
+        }
+    </script>
+</body>
+</html>

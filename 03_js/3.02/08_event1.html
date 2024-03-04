@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('왜 부름?')">Click</button>
+    <button onclick="myF()">Click2</button>
+    <button id="btn">보내기</button>
+    <script>
+        function myF(){
+            console.log('myFUnction')
+        }
+        document.querySelector("#btn").addEventListener('click', function(){
+            console.log('이벤트 리스너 사용함')
+        })
+    </script>
+<!-- Browser reload된 것을 알려주는 콘솔창에 출력 -->
+    <script>
+        window.addEventListener('load', function(){
+            console.log("브라우저 로드됨")
+        })
+    </script>
+li{item}*300
+</body>
+</html>

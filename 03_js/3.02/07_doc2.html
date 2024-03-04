@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">   여기  에는 내 용    </div>
+    <p id="Lorem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, laborum placeat nostrum delectus quia voluptates perspiciatis cum odit omnis provident.</p>
+    <script>
+        //inner HTML, Inner text, Inner content
+        //console에 출력하는 애들 
+        //let txt= document.getElementById('demo')
+
+        //let txt= document.getElementById('demo').innerText
+        // let txt= document.getElementById('demo').textContent 
+        //console.log(txt)
+        document.getElementById('demo').innerHTML="<i> 아이콘</i>"
+        document.getElementsByTagName('p')[0].innerText='<i>홍길동</i>'
+    </script>
+    <h2>메뉴를 만들어봅시다</h2>
+    <script>
+        let ul=document.createElement('ul')
+        for(let i=0; i<5; i++){
+            let li=document.createElement('li') ;  
+            li.innerText="Menu"+i; 
+            ul.appendChild(li)
+        } 
+        document.body.appendChild(ul)
+   
+    </script>
+    
+</body>
+</html>

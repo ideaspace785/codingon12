@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="demo" >Heading1</h1>
+    <h2 class="mystyle">Heading2</h2>
+    <div class="mystyle"></div>
+    <script>
+        // let h1=document.getElementById('demo');
+        let h1= document.getElementsByClassName("mystyle")[0]
+        console.log(h1)
+        let h2=document.querySelectorAll('.mystyle');
+        console.log(h2)
+    </script>
+
+</body>
+</html>

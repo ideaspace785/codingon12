@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="", method="", onsubmit="login()">
+        <!--action="서버쪽 받은파일 
+            method="GET/POST 중 하나"
+            post: 방식은 화면 노출 안돼
+            get : url에 내용이 담겨서 서버쪽으로 넘어간다. -->
+        <div>
+            <label for="email">이메일</label>
+            <input type="email" name="" id="email" required />
+          </div>
+          <div>
+            <label for="pw">비밀번호</label>
+            <input type="password" name="" id="pw" required oninvalid="this.setCustomValidity('비밀번호를 입력하세요.')" >
+          </div>
+          <button type="submit">로그인</button>
+    </form>
+    <script>
+        function login(){
+            event.preventDefault();
+
+           const email= document.querySelector("#email").value;
+           const pw= document.querySelector("#pw").value;
+        //    console.log(email, pw)
+        if(!email.checkValidity){
+            return alert.email.validitionMessage;
+        }
+        if(!pw.checkValidity){
+            return alert.pw.validitionMessage;
+        }
+        }
+        //setCustomBalidity()는 element interface의 요소에 대한 사용자 지정 유효성 메시지 설정
+        
+    </script>
+    
+</body>
+</html>

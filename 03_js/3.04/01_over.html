@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>heading</h1>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="demo"> 주문내역을 입력하세요. </div>
+    <p class="mystyle"></p>
+    <p class="mystyle demo"></p>
+    <script>
+        let myid = document.getElementById('demo');
+        console.log(myid.innerText);
+        myid.innerText="홍길동";
+        myid.innerHTML="<i>홍길동</i>";
+        //textContent : 내용에 공백이 있어도 그대로 출력
+
+        let ul = document.createElement('ul');
+        for(let i=0; i<5; i++){
+            let li = document.createElement('li');
+            li.innerText='menu'+i;
+            ul.appendChild(li);
+        }
+        console.log(ul);
+        document.body.appendChild(ul); // 문서에 출력되게 하기
+
+        let myclass = document.getElementsByClassName('mystyle')[0];
+        let mytag = document.getElementsByTagName('p')[0];
+        console.log(myid);
+        console.log(myclass);
+        console.log(mytag);
+        let mydemo = document.querySelector('#demo');
+        let myclass2 = document.querySelector('.mystyle'); // 여러개일 시 무조건 첫번째 한개만 가져옴
+        let myclass3 = document.querySelectorAll('.mystyle'); // 여러개 모두 가져옴
+        console.log(mydemo);
+        console.log(myclass2);
+        console.log(myclass3);
+
+        //이벤트 : 사용자가 클릭, 휠, 브라우저가 상하, 브라우저 크기 변경
+        // 이벤트 리스너 (event listener) : 모든 이벤트 감지
+        // onClick : 클릭 이벤트 감지, onScroll : 스크롤 이벤트 감지
+    </script>
+</body>
+</html>

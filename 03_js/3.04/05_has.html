@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myBtn" onclick="myF()">click</button>
+    <p id="demo"></p>
+    <script>
+        const myButton= document.getElementById('myBtn');
+        let answer= myButton.hasAttribute("onclick")
+        console.log(answer)
+        document.getElementById('demo').innerText=answer;
+    </script>
+    <a href="https://www.naver.com/" id="hey"> naver </a>
+    <script>
+       let answer1= document.getElementById('hey').hasAttribute('href')
+       console.log(answer1)
+    </script>
+    
+</body>
+</html>
