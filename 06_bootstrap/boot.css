@@ -1,0 +1,38 @@
+body{
+    margin: 40px;
+}
+body::before{
+    content: "XS";
+    color: red;
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.box{
+    background-color: dodgerblue; border: 1px solid; min-height: 50px; font-size: 1rem; color: beige;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media(min-width:576px) {
+    body::before{
+        content:"SM"
+    } 
+}
+@media(min-width:786px) {
+    body::before{
+        content:"MD"
+    } 
+}
+@media(min-width:992px) {
+    body::before{
+        content:"LG"
+    } 
+}
+
+@media(min-width:1200px) {
+    body::before{
+        content:"XL"
+    } 
+}
