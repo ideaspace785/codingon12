@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title%></title>
-    <!-- title이란 변수의 값을 전달 받겠다 -->
-</head>
+<%- include("./partials/header.ejs")%>
 <body>
+    <h1>집가자</h1>
     <nav>
-        <div>
-            <a href=""><h1>BLOG</h1></a>
-            <p>A my first blog</p>
-        </div>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/create">New Blog</a></li>
-        </ul>
+        <%- include("./partials/nav.ejs")%>
     </nav>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dignissimos vero 
-    molestiae magni ducimus quia suscipit ad non, aut cumque, nihil, eveniet odit odio quod maiores. Enim earum labore aspernatur.</p>
-    <h1>INDEX</h1>
+    <h1>집Home</h1>
+    <div class="blogs content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium soluta ducimus illo dolor 
+        itaque minus cum voluptas omnis quae porro, numquam dignissimos veritatis aut sed esse obcaecati sapiente rerum odit.
+    </div>
+    <!-- <script> 를 나중에 지워준다.-->
+     <% for(var i=0; i<5; i++){%>
+        <h1>안녕</h1> 
+        <% } %>
+<!-- </script> -->
+    <%- include("./partials/footer.ejs") %>
 </body>
 </html>

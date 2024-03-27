@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog <%=title %></title>
-</head>
+<%- include("./partials/header.ejs") %>
 <body>
     <h1>About</h1>
     <nav>
-        <div>
-            <a href=""><h1>BLOG</h1></a>
-            <p>A my first blog</p>
-        </div>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/create">New Blog</a></li>
-        </ul>
+        <%- include("./partials/nav.ejs")%>
     </nav>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque dignissimos vero 
-    molestiae magni ducimus quia suscipit ad non, aut cumque, nihil, eveniet odit odio quod maiores. Enim earum labore aspernatur.</p>
     <h1>ABOUT</h1>
+    <div class="about content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis et odio hic laudantium quos voluptas accusantium vel dignissimos, 
+        consequuntur, nostrum obcaecati dolores voluptates aperiam, illum corporis adipisci similique repudiandae itaque?
+    </div>
+    <%- include("./partials/footer.ejs")%>
 </body>
 </html>
