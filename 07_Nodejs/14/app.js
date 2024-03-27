@@ -32,7 +32,6 @@ app.listen(PORT, ()=>{
 })
 
 
-
 //없는 경로 
 app.use((req, res)=>{
     res.status(404).render('404')
