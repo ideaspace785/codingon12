@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("./partials/header.ejs")%>
+    <%- include('./partials/head.ejs')%>
 <body>
-    <h1>집가자</h1>
-    <nav>
-        <%- include("./partials/nav.ejs")%>
-    </nav>
-    <h1>집Home</h1>
+    <%- include('./partials/nav.ejs')%>
     <div class="blogs content">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium soluta ducimus illo dolor 
-        itaque minus cum voluptas omnis quae porro, numquam dignissimos veritatis aut sed esse obcaecati sapiente rerum odit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, ipsa quo! Saepe laudantium laborum minus ratione quasi, 
+        tenetur libero iure deleniti, maiores praesentium officiis excepturi repellat? Atque ratione in dolore!
     </div>
-    <!-- <script> 를 나중에 지워준다.-->
-     <% for(var i=0; i<5; i++){%>
-        <h1>안녕</h1> 
-        <% } %>
-<!-- </script> -->
-    <%- include("./partials/footer.ejs") %>
+    <%- include('./partials/footer.ejs')%>
 </body>
 </html>

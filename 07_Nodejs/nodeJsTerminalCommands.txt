@@ -1,0 +1,13 @@
+npm init -y // package.json 파일이 나온다 
+npm install express ejs 설치
+npm install nodemon
+
+package.json에다 
+ "scripts": {
+    "start": "nodemon app.js", 를 작성해주기
+  },
+
+  실행할 때
+  npm start 
+  또는 
+  node app.js
