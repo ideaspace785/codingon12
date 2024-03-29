@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;}
+        fieldset{width: 80%; margin: auto;}
+        input{border-bottom: 1px dashed #ccc; border-top: none;
+        border-left: none; border-right:none ;}
+        input:focus{ background-color: green; border: none;}
+        #send:hover{color: red; background: #111; padding: 1rem 3rem;
+        cursor: pointer;}
+    </style>
+</head>
+<body>
+    <form action="/action_login.php.asp"  method="get"></form>
+    <!-- /"/action_login.php, "/action_login.asp"등등 확장자를 뒤에 붙여 주면 된다 -->
+    <fieldset>
+        <legend>입력양식 태그의 여러가지들</legend>
+     Select your color: <input type="color" name='favcolor' value="#ff0000">
+     Birthday: <input type="date" name="bday" id=""><br/>
+     Birth(date & time): <input type="datetime-local" name="bdaytime" id=""> <br/>
+     <mark>A date 와 time이 나타납니다(timezone을 보여주는것이 아니다). </mark><br/>
+
+     Birthday(month & year): <input type="month" name="bdaymonth"><br>
+     Select a week: <input type="week" name="yearweek"><br>
+     Email:  <input type="email" name="emailaddress" placeholder="nominaeri8@gmail.com">
+     e-mail: <input type="email" name="multiemail" placeholder="이메일을 코마로 구부하세요" multiple >
+     (Between 1 and 10): <input type="number" name="quantity"  min="1" max="10" step="1"><br>
+     Points: <input type="range" name="points" min="0" max="10">
+     Search: <input type="search" name="gsearch" id=""><br>
+     Tel: <input type="tel" name="telephone" id="" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"><br>
+     <span>입력 예시: 123-00-3333</span><br>
+     예약시간 선택: <input type="time" name="user-time"><br>
+     포플 링크: <input type="url" name="homepage" required> <br>
+     <!-- http로 시작하는 input만 받음 -->
+     <input type="submit" value="회원가입" id="send"><br>
+
+
+    </fieldset>
+</body>
+</html>

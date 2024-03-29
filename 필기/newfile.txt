@@ -1,1 +1,2 @@
 touch idex.html index.css
+parser 어휘 설명

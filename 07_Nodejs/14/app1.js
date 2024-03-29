@@ -20,3 +20,6 @@ app.get('/about', (req, res)=>{
 app.get('/create', (req, res)=>{
     res.render('create', {title: 'CREATE'})
 })
+app.use((req, res)=>{
+    res.status(404).render('404')
+})

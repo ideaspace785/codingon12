@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise</h1>
+    <script>
+        function changeColor(newColor){
+        return new Promise((res,rej)=>{
+            setTimeout(function(){
+        document.body.style.backgroundColor=newColor;
+        res();
+    },1000)
+})
+}   
+// changeColor('red')
+//     .then(function(){
+//       return changeColor('orange')
+//     }).then(function(){
+//       return changeColor('yellow')
+//     }).then(function(){
+//       return changeColor('green')
+//     }).then(function(){
+//       return changeColor('blue')
+//     })
+//async await
+async function exec(){
+    await changeColor('orange')
+    await changeColor('yellow')
+    await changeColor('green')
+    await changeColor('blue')
+}
+exec();
+ </script>
+</body>
+</html>
