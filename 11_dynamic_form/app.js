@@ -12,6 +12,12 @@ app.set('views', 'views')
 app.get('/', (req, res) => {
     res.render('index')
 })
+app.get('/practice1',(req, res)=>{
+    res.render('practice1')
+})
+app.get('/practice2',(req, res)=>{
+    res.render('practice2')
+})
 
 app.listen(8000, () => {
     console.log("8000 port 실행 중")
