@@ -20,42 +20,7 @@
             <label for="female">여자</label>
         </fieldset>
         <br />
-        <fieldset>
-            <legend>생년월일</legend>
-            <select name="birthYear" id="year">
-                <% for(let i=i; i<50; i++{ %>
-                    <option value="<%= 2010-i %>"><%= 2010-i %> </option>
-                <% }) %>
-            </select>
-            <label for="year">년</label>
-            <select name="birthMonth" id="month"></select>
-            <label for="month">월</label>
-            <select name="birthDay" id="day"></select>
-            <label for="day">일</label>
-        </fieldset>
-        <!-- 내용 입력 -->
-        <button type="button" onclick="clickRegister()">회원가입</button>
-    </form>
-    <div class="register-result" style="padding: 30px;"></div>
-
-    <script>
-        const registerResult= document.querySelector('.register-result')
-        function clickRegister() {
-            const form = document.forms['register'];
-            //...
-
-            const hobbies=Array.form(form.hobby).filter(elem => elem.checked === true).map(elem => elem.value)
-            console.log("hobbies: ", hobbies)
-            const data = {
-                username: form.name.value,
-                gender: form.gender.value,
-                bithYear:form.bithYear.value,
-                birthMonth: form.birthMonth.value,
-                birthDay: form.birthDay.value,
-                hobby: hobbies
-            }
-        }
-    </script>
+       
 </body>
 
 </html>

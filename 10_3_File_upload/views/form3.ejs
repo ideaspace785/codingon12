@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Document</title>
+  <style>
+    .profile{width: 200px; height: 200px; border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0, 0,.5);}
+  </style>
+</head>
+<body>
+  <h1>여러개의 파일 1개씩 업로드</h1>
+  <form action="/upload/fields" method="post" enctype="multipart/form-data">
+    <input type="file" name="userfile1">
+    <input type="file" name="userfile2">
+    <button>업로드</button>
+  </form>
+  <hr>
+  <h1>Dynamic Form</h1>
+  <input type="text" name="title" id="title" placeholder="Title">
+  <input type="file" name="dynamicFile" id="dynamicFile">
+  <button type="button" onclick="fileUpload()">업로드</button>
+  <!-- 업로드 이미지 보여주기 -->
+  <img src="" alt="">
+  <script>
+    function fileUpload(){
+      const title = document.querySelector("#title");
+      const file = document.querySelector("#dynamicFile");
+      // formData() 폼의 내용을 전송하기 쉽게 해준다. axios, ajax함께 사용
+      const formData = new FormData();
+      formData.append('dynamicFile', file.files[0])
+      formData.append('title', title.value)
+      // 데이터
+      axios({
+        method:'post',
+        url:'/dynamic',
+        data:formData,
+        headers :{ 'Content-Type':'multipart/form-data'}
+      }).then(res=>{
+        console.log(res.data);
+        const {file, title } = res.data
+        const imgElem = document.querySelector('img');
+        imgElem.src="/"+ file.path;
+        imgElem.alt=title;
+        imgElem.classList.add('profile')
+      })
+    }
+  </script>
+
+</body>
+</html>
