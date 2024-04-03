@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="register">
+        <input type="text" name="id" id="id" placeholder="아이디"><br>
+        <input type="password" name="pw" id="pw" placeholder="비밀번호"><br>
+        <input type="text" name="name" id="name" placeholder="이름"><br>
+        <input type="number" name="age" id="age" placeholder="나이"><br>
+
+        <button type="button" onclick="fileUpload()">파일 업로드</button><hr/>
+        <button type="button" onclick="axiosGet()">회원 가입</button><hr/>
+        <div class="result"></div>
+    </form>
+
+    <script>
+        function axiosGet(){ 
+            const data={
+                name: form.name.value,
+                id: form.id.value,
+                password: form.pw.value,
+                age: form.age.value
+            }
+            axios({
+                method:'get',
+                url:'/axios',
+                params: data
+            }).then((res)=>{
+                console.log(res.data)
+                result.textContent=`${id}님 환영합니다! 비밀번호: ${password}, 이름: ${name}, 나이: ${age}`
+            }).catch((err)=>{
+                console.log("ERROR")
+             resultBox.textContent=`GET/Axios user data 요청실패 ${err.response.data}`
+            })
+        }
+        
+    </script>
+</body>
+</html>

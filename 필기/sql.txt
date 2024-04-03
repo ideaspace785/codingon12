@@ -1,0 +1,30 @@
+sql commands 
+https://azure-pick-b47.notion.site/Database-65d5002aa8944c6c8ca22a4867237971
+
+ select 'hello' like 'h%';           true 
+ select 'hello' like 'h____';         true
+
+select date_format(now(), '%Y, %M, %D, %T');
+select date_format(now(), '%Y, %M, %D, %T');
+
+schema-스키마- s hem 
+create database study; //등 database 만들기 
+drop database study;   // 지우기
+show databases;         // 만들어진 걸 확인하기
+use study;
+
+create table 'topic' () //가로 안에 table에 들어가야할 내용과 type를 작성
+ create table `topic` (
+    -> `id` int(11) not null AUTO_INCREMENT,
+    -> `title` varchar(100) not null,
+    -> `description` text not null,
+    -> `author` varchar(30) not null,
+    -> primary key(id)
+    -> ) ENGINE=InnoDB default charset=utf8;
+
+다양한 접속 방법
+mysql -uroot -p
+mysql -uroot -p -h localhost
+mysql -uroot -p -h127.0.0.1
+mysql -uroot -p -h 127.0.0.1
+
