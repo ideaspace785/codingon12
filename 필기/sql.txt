@@ -12,6 +12,8 @@ create database study; //등 database 만들기
 drop database study;   // 지우기
 show databases;         // 만들어진 걸 확인하기
 use study;
+select * from band     //bands의 모든걸 보여주기
+select bands.name as "BAND NAME" from bands
 
 create table 'topic' () //가로 안에 table에 들어가야할 내용과 type를 작성
  create table `topic` (
@@ -27,4 +29,11 @@ mysql -uroot -p
 mysql -uroot -p -h localhost
 mysql -uroot -p -h127.0.0.1
 mysql -uroot -p -h 127.0.0.1
-
+create table albums (
+    -> id int not null auto_increment,
+    -> name varchar(255) not null,
+    -> release_year int,
+    -> band_id int not null,
+    -> primary key(id)
+    -> ,foreign key(band_id) reference bands(id)
+    -> );
