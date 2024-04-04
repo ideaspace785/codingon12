@@ -1,0 +1,21 @@
+<!-- UI 관련 처리 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>댓글 목록</h1>
+    <a href="/">홈으로 가기</a>
+     <ul>
+        <% for(let i=0l i<commentInfo.length; i++){ %>
+            <li>
+                <b><%=commentInfo[i].userid %></b>
+                <a href="./comment/<%=commentInfo[i].id%>"><%= commentInfo[i].comment %></a>
+            </li>
+            <% } %>
+     </ul>
+</body>
+</html>
