@@ -10,10 +10,10 @@
     <a href="/">홈으로 가기</a>
 
     <ul>
-        <% for(let i=0; i<commentsInfos.length; i++){ %>
+        <% for(let i=0; i <commentInfos.length; i++){ %>
             <li>
-                <b><%=commentsInfos[i].userid%></b>
-                <a href="./comment/<%=commentsInfos[i].id%>"><%=commentsInfos[i].comment%></a>
+                <b><%= commentInfos[i].userId %></b>
+                <a href="/comment/<%=commentInfos[i].id%>"> <%= commentInfos[i].comment %> </a>
             </li>
         <% } %>
     </ul>
