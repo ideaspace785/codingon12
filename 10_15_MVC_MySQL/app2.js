@@ -31,7 +31,14 @@ app.use(express.json);
 
 
 app.get('/', (req,res)=>{
-    res.render('index')
+    var sql= "insert into customer(custid, custname, addr,phone, birth) value(?,?,?,?,?) ";
+    var values=['peach', '홀길동', '마포구에 살아요', '0102222222', '2000-09-22'] ;
+    conn.query(sql, values, function(err, rows, fields){
+        if(err){
+            console.log(err);
+            res.status(500).send("Internal server Error");
+        }
+    })
 })
 
 app.listen(PORT, ()=>{
