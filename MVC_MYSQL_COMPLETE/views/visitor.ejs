@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../static/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+    <script defer src="../static/script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <h1>방문자</h1>
-    <form action="" name="visitor-form">
+    <h1>방문자 목록</h1>
+    <form name="visitor-form">
         <fieldset>
             <legend>방명록 등록</legend>
-            <input type="text" id="name" placeholder="사용자이름">
-            <input type="text" id="comment" placeholder="방명록내용">
+            <input type="text" id="name" placeholder="사용자 이름">
+            <input type="text" id="comment" placeholder="방명록 내용">
             <div id="button-group">
                 <button type="button" onclick="createVisitor()">등록</button>
             </div>
         </fieldset>
     </form>
+
     <hr>
+
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th><th>작성자</th><th>방명록</th><th>수정</th><th>삭제</th>
+                <th>ID</th>
+                <th>작성자</th>
+                <th>방명록</th>
+                <th>수정</th>
+                <th>삭제</th>
             </tr>
         </thead>
+
         <tbody>
-            <% for (let i=0; i<data.length; i++){ %>
-            <tr id="tr_<%data[i].id %>">
-                <td><%= data[i].id %></td>
-                <td><%= data[i].name %></td>
-                <td><%= data[i].comment %></td>
-                <td><button type="button" onclick="editVisitor('<%= data[i].id %>')">수정</button></td>
-                <td><button type="button"onclick="deleteVisitor('<%= data[i].id %>')">삭제</button></td>
-            </tr>
-        <% } %>
+            <% for(let i=0; i<data.length; i++) { %>
+                <!-- 온클릭에서 어떤걸 클릭했을때 버튼이바뀔지 구분해주기 위해 데이터 받기 -->
+                <tr id="tr_<%=data[i].id%>">
+                    <td>
+                        <%=data[i].id%>
+                    </td>
+                    <td>
+                        <%=data[i].name%>
+                    </td>
+                    <td>
+                        <%=data[i].comment%>
+                    </td>
+                    <td><button type="button" onclick="editVisitor('<%= data[i].id %>')">수정</button></td>
+                    <td><button type="button" onclick="deleteVisitor(this,'<%= data[i].id %>')">삭제</button></td>
+                </tr>
+                <% } %>
         </tbody>
     </table>
 </body>
+
 </html>

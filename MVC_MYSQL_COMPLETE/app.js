@@ -1,23 +1,22 @@
-const express=require('express')
-const app=express();
-const PORT=8000;
-const mysql=require('mysql2');
+const express = require('express');
+const app = express();
 
-app.set('view engine', 'ejs')
-app.set('views', './views')
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
-const indexRouter = require('./routes')
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use('/static', express.static(__dirname + '/static'));
+
+//첫화면
+const indexRouter = require('./routes/index')
 app.use('/', indexRouter)
 
-app.use(express.urlencoded({extended :true}))
-app.use(express.json())
-app.use('/static', express.static(__dirname + '/static'))
-
-//404 page
-app.get('*', (req, res)=>{
+//404화면
+app.get('*', (req, res) => {
     res.render('404')
 })
 
-app.listen(PORT, ()=>{
-    console.log(`${PORT} is running`)
+app.listen(3000, () => {
+    console.log('3000 server running...');
 })
