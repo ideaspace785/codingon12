@@ -12,5 +12,7 @@ const sequelize= new Sequelize(
 db.sequelize=sequelize;
 db.Sequelize=Sequelize;
 //db={"sequelize": sequelize, "Sequelize": Sequelize}  이거랑 같은 형태
+db.Visitor= require('./Visitor')(sequelize, Sequelize)
+db.User=require("./User")(sequelize, Sequelize)
 
 module.exports=db;

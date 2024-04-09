@@ -1,19 +1,24 @@
-const express= require('express');
-const { sequelize } = require('./models');
-const app=express();
+const express = require('express');
+const app = express();
+const db = require('./models/index')
 
-app.set('view engine', 'ejs')
-app.set('view','./views')
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
-app.use('/static', express.static(__dirname + '/static'))
+app.use('/static', express.static(__dirname + '/static'));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
-app.use(express.urlencoded({extended:true}))
-app.use(express.json())
+const indexRouter=require('./routes');
+app.use('/', indexRouter)
 
-db=sequelize.sync({force:false}).then(()=>{
-    //force:false는 테이블이 없으면 생성한다는 의미
-    
+app.get("*", (req, res)=>{
+    res.render('404')
+})
+
+
+db.sequelize.sync({force:false}).then(()=>{
     app.listen(8000, ()=>{
-        console.log("8000 server is running...")
+        console.log('8000 server runninig...');
     })
 })
