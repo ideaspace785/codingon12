@@ -3,4 +3,10 @@
 
 1.npm install nodemon express ejs mysql2 sequelize sequelize-cli
 2. npx sequelize init
-3. .\node_modules\.bin/sequelize
+3. .\node_modules\.bin\sequelize
+4. .\node_modules\.bin\sequelize init 
+5. .\node_modules\.bin\sequelize model:generate --name User --attributes userId:string, name:string, engName:string
+
+
+
+주의 config에서의 database 이름을 작업할 db로 바꿔주기
