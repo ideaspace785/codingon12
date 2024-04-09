@@ -1,0 +1,6 @@
+전역 설치가 아니라 지역 설치
+경로를 설치해주고 
+
+1.npm install nodemon express ejs mysql2 sequelize sequelize-cli
+2. npx sequelize init
+3. .\node_modules\.bin/sequelize
