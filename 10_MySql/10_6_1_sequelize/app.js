@@ -12,6 +12,10 @@ app.use(express.json());
 const indexRouter=require('./routes');
 app.use('/', indexRouter)
 
+const userRouter=require('./routes/user')
+app.use('/user', userRouter)
+
+
 app.get("*", (req, res)=>{
     res.render('404')
 })
