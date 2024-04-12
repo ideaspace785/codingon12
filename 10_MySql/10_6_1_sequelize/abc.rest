@@ -1,0 +1,3 @@
+# query문 명령어를 읽어드린다. 
+Send Request
+GET http://jsonplaceholder.typecode.com/todos/

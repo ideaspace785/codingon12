@@ -1,0 +1,35 @@
+selectors in css
+span.orange  : span tag의 orange class
+ul > .orange  : ul의 자식 요소 중에 orange class
+.orange ~ li   : orange class의 다음 형제 요소 모두 선택 
+a:hover {color:red;} : Hover 마우스를 올렸을때
+a:active {color:red;} : Active 마우스를 클릭했을때
+input:focus{background-color:orange;} 
+키보드나 마우스로 선택이 됐을때
+-------------------------------------------------
+div {
+    padding:10px;
+    border: 3px solid pink;
+}
+div:focus-within {
+    border-color: black;
+}
+:focus-within: 자식 중 어떤 것이든 focus 됐을 때 부모 엘리먼트의 상태를 의미
+-------------------------------------------------
+.fruits span:first-child fruits class 의 자식 중 첫째 span tag를 선택
+.fruits span:last-child
+.fruits *:nth-child(n)
+.fruits *: not(span)
+-------------------------------------------------
+Chain Reaction: 부모의 상태가 바뀌었을 때 자식에게 효과를 주는 연계 반응
+<div>
+    <button>Hello</button>
+</div>  
+style css
+div{
+  border: 3px solid pink;
+}
+/* Chain Reaction */
+div:hover button {
+    background-color:green;
+}
