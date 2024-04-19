@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('include', {title: "Home"})%>
+</head>
+<body>
+    <%- include('header')%>
+    <% if(isLogin){ %>
+        <h1><%=user%>님 환영합니다</h1>
+    <% }else { %>
+            <p>아직 로그인 안되었다!</p>
+            <a href="/login">로그인!</a>
+    <% } %>
+
+</body>
+</html>
