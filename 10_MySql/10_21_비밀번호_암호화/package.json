@@ -1,0 +1,6 @@
+{
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  }
+}
