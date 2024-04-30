@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=['tomato', 'apple', 'pear']
+        console.log(arr.join())     //아무것도 들어가지 않으면 원래 있던 쉼표로 구분
+        console.log(arr.join(''))   //
+        console.log(arr.join('-'))  // --를 이용하여 문자열로 구분하여 새 문자열로 변환
+    </script>
+
+    <script>
+        const json="{'result':true, 'count':42}";
+        const obj=JSON.parse(json)
+        console.log(obj.result)
+        console.log(obj.count)
+   </script>
+</body>
+</html>

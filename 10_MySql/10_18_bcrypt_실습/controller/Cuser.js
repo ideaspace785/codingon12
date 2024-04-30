@@ -1,5 +1,5 @@
 const { User } = require('../models');
-const { bryptPassword, compareFunc } = require('../utils/encrypt')
+const { bcryptPassword, compareFunc } = require('../utils/encrypt')
 
 exports.index = (req, res) => {
     res.render('index', { data: req.session.userInfo });
@@ -60,16 +60,19 @@ exports.postLogin = async (req, res) => {
         res.send('Internal Server Error');
     }
 }
-exports.patchProfile = async (req, res) => {
+exports.patchProfile =async (req,res)=>{
+  
     try {
-        const { name, pw, id } = req.body;
-        await User.update({ name, pw }, { where: { id } });
-        res.json({ result: true });
+      const { name, pw, id } = req.body;
+      await User.update({ name, pw }, { where: { id } });
+  
+      res.json({ result: true });
     } catch (err) {
-        console.error(err);
-        res.send('Internal Server Error');
+      console.error(err);
+      res.send('Internal Sever Error');
     }
-}
+  }
+  
 exports.deleteUser = async (req, res) => {
     try {
         const { id } = req.body;
@@ -80,13 +83,13 @@ exports.deleteUser = async (req, res) => {
         req.session.destroy((err) => {
             if (err) {
                 console.error(err);
-                return res.send('Internal Server Error');
+                return res.send('Internal Server Error');``
             }
             res.json({ result: true });
         }); // 세션 삭제
     } catch (err) {
         console.error(err);
-        res.send('Internal Sever Error');
+        res.send('Internal Server Error');
     }
 }
 

@@ -13,5 +13,5 @@ router.post('/login', controller.postLogin);
 
 router.get('/profile', controller.getProfile);
 router.patch('/profile/edit', controller.patchProfile);
-router.delete('destroy', controller.deleteUser)
+router.delete('/destroy', controller.deleteUser)
 module.exports=router;

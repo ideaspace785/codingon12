@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();c
+const app = express();
 const db = require('./models/index')
 
 app.set('view engine', 'ejs');
