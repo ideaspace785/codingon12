@@ -1,0 +1,12 @@
+// scss 파일 명 앞에 _ 의미: 이 파일은 css 파일로 변환될 필요가 없음
+//mixin들 선언
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}
+
+// 움직임을 정의하는 mixin을 만듭니다.
+@mixin move-clockwise {
+    position: relative;
+    animation: move 2s linear infinite;
+  }

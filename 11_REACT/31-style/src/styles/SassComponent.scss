@@ -1,0 +1,43 @@
+@import './variables';
+@import './utils';
+// - 믹스인 선언 -> 함수 정의
+
+
+
+// - 중첩: 부모 자식 관계 표현 가능
+.container {
+    .box{
+        //mixin 호출
+        @include box(150px);
+
+        // .box.red -> box red
+        // &: 부모 선택자를 참조해서 치환
+        &.red{
+            // &.red = .box.red
+            background-color: $color-first;
+        }
+        &.yellow{
+            background-color: $color-second;
+        }
+        &.pink{
+            background-color: $color-third;
+        }
+        &:hover{
+            //연산 가능
+            $box-animation: $animation-duration * 2;
+            transform: translateY(-20px);
+            transition: $box-animation;
+        }
+    }
+}
+.btn{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+// 확장: 기존 선택자 스타일을 다른 선택자에게 상속
+.btn-primary{
+    @extend .btn;
+    background-color: aqua;
+}
