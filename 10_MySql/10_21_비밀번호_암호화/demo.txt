@@ -1,2 +1,1 @@
-Alphabet 하나
-ABCD
+rev_img, rev_authImg 를 먼저 로컬에 다운 받고 필수 필드가 있는지를 확인하고 나서 있으면 디비에 올리기
