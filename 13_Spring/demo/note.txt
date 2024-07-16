@@ -1,0 +1,9 @@
+NODE에서 환경 변수(env)와 똑같다.
+src
+   ㄴ resources
+    ㄴ application.properties
+       server.port=8080         env파일과 같은 역할
+
+
+build.gradle //node.js에서의 package.json과 유사한 역할
+setting.gradle
