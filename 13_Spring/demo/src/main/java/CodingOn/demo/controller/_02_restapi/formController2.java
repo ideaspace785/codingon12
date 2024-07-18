@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class formController {
 
-    @GetMapping("form")
+    @GetMapping("/form")
     public String getReq() {
         return "_02_restapi/form";
     }
