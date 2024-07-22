@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시글 작성/수정</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1 id="formTitle">게시글 작성</h1>
+<form id="postForm">
+    <div>
+        <label for="title">제목:</label>
+        <input type="text" id="title" required>
+    </div>
+    <div>
+        <label for="content">내용:</label>
+        <textarea id="content" rows="4" required></textarea>
+    </div>
+    <div>
+        <label for="writer">작성자:</label>
+        <input type="text" id="writer" required>
+    </div>
+    <button type="submit" id="submitButton" class="btn">추가</button>
+</form>
+<a href="/posts" class="btn" style="margin-top: 10px;">목록으로</a>
+<script>
+    let postId = null;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const pathParts = window.location.pathname.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+
+        if (lastPart === 'edit') {
+            postId = pathParts[pathParts.length - 2];
+            document.getElementById('formTitle').textContent = '게시글 수정';
+            document.getElementById('submitButton').textContent = '수정';
+            fetchPost(postId);
+        } else {
+            postId = null;
+            document.getElementById('formTitle').textContent = '게시글 작성';
+            document.getElementById('submitButton').textContent = '추가';
+        }
+
+        document.getElementById('postForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (postId) {
+                updatePost();
+            } else {
+                createPost();
+            }
+        });
+    });
+
+    function fetchPost(id) {
+    console.log("fetchPost called");
+        axios.get('/api/posts/' + id)
+            .then(function (response) {
+                const post = response.data;
+                document.getElementById('title').value = post.title;
+                document.getElementById('content').value = post.content;
+                document.getElementById('writer').value = post.writer;
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+            });
+    }
+
+    function createPost() {
+        const postData = {
+            title: document.getElementById('title').value,
+            content: document.getElementById('content').value,
+            writer: document.getElementById('writer').value
+        };
+
+        axios.post('/api/posts', postData)
+            .then(function (response) {
+                window.location.href = '/posts';
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+            });
+    }
+
+    function updatePost() {
+        console.log("updatePost called");
+
+        const postData = {
+            title: document.getElementById('title').value,
+            content: document.getElementById('content').value,
+            writer: document.getElementById('writer').value
+        };
+        console.log(postData);
+
+        axios.put('/api/posts/' + postId, postData)
+            .then(function (response) {
+                window.location.href = '/posts';
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시글 목록</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>게시글 목록</h1>
+<a href="/posts/new" class="btn">새 글 작성</a>
+<input type="text" id="searchWriter" placeholder="작성자 이름으로 검색">
+<button onclick="searchByWriter()">검색</button>
+<input type="text" id="searchTitleOrWriter" placeholder="작성자 이름 또는 제목으로 검색">
+<button onclick="searchByTitleOrWriter()">검색</button>
+<div id="postsContainer">
+    <!-- 게시글이 여기에 표시됩니다 -->
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchPosts();
+    });
+
+    function fetchPosts() {
+        axios.get('/api/posts')
+            .then(function (response) {
+                const posts = response.data;
+                const container = document.getElementById('postsContainer');
+                container.innerHTML = '';
+                posts.forEach(function(post) {
+                    const postElement = `
+                        <div class="post">
+                            <h2>${post.title}</h2>
+                            <p>${post.content}</p>
+                            <p><strong>작성자:</strong> ${post.writer}</p>
+                            <div class="action-buttons">
+                                <a href="/posts/${post.id}/edit" class="btn">수정</a>
+                                <button onclick="deletePost(${post.id})" class="btn btn-danger">삭제</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += postElement;
+                });
+            })
+            .catch(function (error) {
+                console.error('Error:', error);
+            });
+    }
+
+    function deletePost(id) {
+        if (confirm('정말로 삭제하시겠습니까?')) {
+            axios.delete('/api/posts/' + id)
+                .then(function (response) {
+                    fetchPosts();
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                });
+        }
+    }
+    function searchByWriter() {
+        const writer = document.getElementById('searchWriter').value;
+        axios.get('/api/posts/writer/' + writer)
+            .then(function(response) {
+                const posts = response.data;
+                const container = document.getElementById('postsContainer');
+                container.innerHTML = '';
+                posts.forEach(function(post) {
+                    const postElement = `
+                        <div class="post">
+                            <h2>${post.title}</h2>
+                            <p>${post.content}</p>
+                            <p><strong>작성자:</strong> ${post.writer}</p>
+                            <div class="action-buttons">
+                                <a href="/posts/${post.id}/edit" class="btn">수정</a>
+                                <button onclick="deletePost(${post.id})" class="btn btn-danger">삭제</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += postElement;
+                });
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+            });
+    }
+    function searchByTitleOrWriter() {
+        const keyword = document.getElementById('searchTitleOrWriter').value;
+        axios.get('/api/posts/searchByTitleOrWriter/' + keyword)
+            .then(function(response) {
+                const posts = response.data;
+                const container = document.getElementById('postsContainer');
+                container.innerHTML = '';
+                posts.forEach(function(post) {
+                    const postElement = `
+                        <div class="post">
+                            <h2>${post.title}</h2>
+                            <p>${post.content}</p>
+                            <p><strong>작성자:</strong> ${post.writer}</p>
+                            <div class="action-buttons">
+                                <a href="/posts/${post.id}/edit" class="btn">수정</a>
+                                <button onclick="deletePost(${post.id})" class="btn btn-danger">삭제</button>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += postElement;
+                });
+            })
+            .catch(function(error) {
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>
