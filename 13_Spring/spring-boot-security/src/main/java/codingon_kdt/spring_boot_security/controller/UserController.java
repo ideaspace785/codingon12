@@ -8,6 +8,8 @@ import codingon_kdt.spring_boot_security.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +26,19 @@ public class UserController {
     @Autowired
     private TokenProvider tokenProvider;
 
+    // [after] 패스워드 암호화 적용 후
+    // private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO) {
         try {
             UserEntity user = UserEntity.builder()
                     .username(userDTO.getUsername())
                     .email(userDTO.getEmail())
-                    .password(userDTO.getPassword())
+                    // .password(userDTO.getPassword())
+                    .password(passwordEncoder.encode(userDTO.getPassword()))
                     .build();
 
             // 서비스 계층을 이용해서 레포지토리에 저장
@@ -55,14 +63,16 @@ public class UserController {
 
 
         //  userService 계층을 통해 이메일과 비밀번호로 사용자를 조회
-        UserEntity user = userService.getByCredentials(userDTO.getEmail(), userDTO.getPassword());
+        UserEntity user = userService.getByCredentials(userDTO.getEmail(), userDTO.getPassword(), passwordEncoder);
 
         if (user != null) {
+
             // [before]
             // final UserDTO responseUserDTO = UserDTO.builder()
             //       .email(user.getEmail())
             //       .id(user.getId())
             //       .build();
+
             // [after] jwt token 적용한 후
             final String token = tokenProvider.create(user);
             final UserDTO responseUserDTO = UserDTO.builder()
@@ -78,5 +88,6 @@ public class UserController {
             return ResponseEntity.badRequest().body(responseDTO);
         }
     }
+
 
 }
