@@ -1,4 +1,4 @@
-package source_codes.chapter2.guess_number_game;
+package source_codes.chapter2;
 
 public class GameLauncher {
     public static void main(String[] args) {
